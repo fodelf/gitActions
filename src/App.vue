@@ -21,6 +21,10 @@
               <label>颜色:</label>
               <el-color-picker v-model="color" show-alpha></el-color-picker>
             </el-row>
+            <el-row>
+              <label>字体:</label>
+              <el-input-number v-model="fontSize" :min="12" :max="200" ></el-input-number>
+            </el-row>
           </div>
 
           <div id='headerfileContent'
@@ -58,7 +62,7 @@
                 <el-card>
                   <div ref='banner'
                        class='banner'>
-                    <div :style="{backgroundImage: 'url('+ src +')',color:color}"
+                    <div :style="{backgroundImage: 'url('+ src +')',color:color,fontSize: fontSize +'px'}"
                          class='bannerWord'>
                       {{bannerWord}}
                     </div>
@@ -109,7 +113,8 @@ export default {
       headerImgJob: '前端工程师',
       headerImgDes: '做对的事永远不会迟',
       bannerWord: 'ES6入门',
-      color: 'rgba(255, 255, 255, 1)'
+      color: 'rgba(255, 255, 255, 1)',
+      fontSize:40
     }
   },
   watch: {
