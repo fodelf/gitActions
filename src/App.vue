@@ -3,7 +3,7 @@
     <el-container>
       <el-header>博客大图与签名生成器</el-header>
       <el-container>
-        <el-aside width='400px'>
+        <el-aside width='200px'>
           <div id='banner'
                v-show="activeName=='banner'">
             <el-row>
