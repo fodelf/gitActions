@@ -17,6 +17,10 @@
               <el-input v-model="bannerWord"
                         placeholder="请输入标题"></el-input>
             </el-row>
+             <el-row>
+              <label>颜色:</label>
+              <el-color-picker v-model="color" show-alpha></el-color-picker>
+            </el-row>
           </div>
 
           <div id='headerfileContent'
@@ -54,7 +58,7 @@
                 <el-card>
                   <div ref='banner'
                        class='banner'>
-                    <div :style="{backgroundImage: 'url('+ src +')'}"
+                    <div :style="{backgroundImage: 'url('+ src +')',color:color}"
                          class='bannerWord'>
                       {{bannerWord}}
                     </div>
@@ -104,7 +108,8 @@ export default {
       headerImgName: '吴文周',
       headerImgJob: '前端工程师',
       headerImgDes: '做对的事永远不会迟',
-      bannerWord: 'ES6入门'
+      bannerWord: 'ES6入门',
+      color: 'rgba(255, 255, 255, 1)'
     }
   },
   watch: {
